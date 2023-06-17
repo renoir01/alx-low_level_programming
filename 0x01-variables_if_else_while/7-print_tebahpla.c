@@ -1,24 +1,25 @@
 #include <stdio.h>
-#include <ctype.h>
 
 /**
- * main - Program that prints the lowercase alphabet in reverse,
- * followed by a new line.
- *
- * You can only use the putchar function (every other function (printf,
- * puts, etc…) is forbidden).
- * All your code should be in the main function.
- * You can only use putchar twice in your code.
-
- * Return: 0.
+*main - Entry point
+*
+*Return: 0(Success)
 */
-
-int main(void)
+int  main(void)
 {
-char chr;
+	const int SIZE = 26;
 
-	for (chr = 'z'; chr >= 'a'; --chr)
-		putchar(chr);
+	char letters[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+			      'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+			      'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+			      'y', 'z'};
+
+	int index;
+
+	for (index = (SIZE - 1) ; index >= 0 ; index--)
+	{
+		putchar(letters[index]);
+	}
 	putchar('\n');
 	return (0);
 }

@@ -1,25 +1,22 @@
 #include <stdio.h>
-#include <ctype.h>
 
 /**
- * main - Program that prints all single digit numbers of base 10 starting,
- * from 0, followed by a new line.
+ *main - Entry point
  *
- * You are not allowed to use any variable of type char.
- * You can only use the putchar function (every other function (printf
- * puts, etc…) is forbidden).
- * You can only use putchar twice in your code.
- * All your code should be in the main function.
-
- * Return: 0.
-*/
-
+ *Return: 0(success)
+ */
 int main(void)
 {
-int i;
+	const int SIZE = 10;
 
-	for (i = '0'; i <= '9'; ++i)
-		putchar(i);
+	int index;
+
+	int numbers[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+
+	for (index = 0; index < SIZE ; index++)
+	{
+		putchar(numbers[index]);
+	}
 	putchar('\n');
 	return (0);
 }

@@ -1,27 +1,23 @@
 #include <stdio.h>
-#include <ctype.h>
 
 /**
- * main - Program that prints all the numbers of base 16 in lowercase,
- * followed by a new line.
- *
- * You can only use the putchar function (every other function (printf,
- * puts, etc…) is forbidden).
- * All your code should be in the main function.
- * You can only use putchar three times in your code.
-
- * Return: 0.
+*main - Entry point
+*
+*Return: 0(Success)
 */
-
-int main(void)
+int  main(void)
 {
-int i;
-char a;
+	const int SIZE = 16;
 
-	for (i = '0'; i <= '9'; ++i)
-		putchar(i);
-	for (a = 'a'; a <= 'f'; ++a)
-		putchar(a);
+	char letters[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+			  'a', 'b', 'c', 'd', 'e', 'f'};
+
+	int index;
+
+	for (index = 0 ; index < SIZE ; index++)
+	{
+		putchar(letters[index]);
+	}
 	putchar('\n');
 	return (0);
 }

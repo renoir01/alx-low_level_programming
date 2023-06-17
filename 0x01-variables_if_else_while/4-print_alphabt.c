@@ -1,26 +1,23 @@
 #include <stdio.h>
-#include <ctype.h>
 
 /**
- * main - Program that prints the alphabet in lowercase followed by a new line.
+ *main - Entry point
  *
- * Print all the letters except q and e.
- * You can only use the putchar function (every other function (printf,
- * puts, etc…) is forbidden).
- * All your code should be in the main function.
- * You can only use putchar twice in your code.
-
- * Return: 0
-*/
-
+ *Return: 0(success)
+ */
 int main(void)
 {
-	int ch;
+	const int SIZE = 24;
 
-	for (ch = 'a'; ch <= 'z'; ch++)
+	char lower[26] = {'a', 'b', 'c', 'd', 'f', 'g', 'h', 'i', 'j',
+			    'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't',
+			    'u', 'v', 'w', 'x', 'y', 'z'};
+
+	int index;
+
+	for (index = 0; index < SIZE ; index++)
 	{
-		if (ch != 'e' && ch != 'q')
-		putchar(ch);
+		putchar(lower[index]);
 	}
 	putchar('\n');
 	return (0);
