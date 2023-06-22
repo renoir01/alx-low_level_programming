@@ -1,51 +1,28 @@
 #include <stdio.h>
-void largest_prime_factor(long int n);
-int is_prime(long int c);
 /**
- *main - Entry point
+ * main - Program that finds and prints the largest prime factor of the,
+ * number 612852475143, followed by a new line.
  *
+ * You are allowed to use the standard library.
+ * Your program will be compiled with this command:
+ * gcc -Wall -pedantic -Werror -Wextra -std=gnu89 100-prime_factor.c -o
+ * 100-prime_factor -lm
  *
- *Return: 0(success)
- */
+ * Return: 0
+*/
+
 int main(void)
 {
-	largest_prime_factor(612852475143);
-	return (0);
-}
+	long i, number = 612852475143;
 
-/**
- *largest_prime_factor - Returns largest prime factor of a number
- *
- *@n: Number to be checked
- *Return: void
- */
-void largest_prime_factor(long int n)
-{
-	long int index;
-
-	for (index = n ; index > 0 ; index--)
-		if ((n % index) == 0 && is_prime(index))
-		{
-			printf("%ld", index);
-			putchar('\n');
-			break;
-		}
-}
-
-/**
- *is_prime - Checks if c is prime
- *
- *@c: Number to be checked
- *Return: 0(if c is not prime), 1(if c is prime)
- */
-int is_prime(long int c)
-{
-	long int range;
-
-	for (range = 2 ; range < c ; range++)
+	for (i  = 2; i <= number; i++)
 	{
-		if (c % range == 0)
-			return (0);
+		if (number % i == 0)
+		{
+			number = number / i;
+			i--;
+		}
 	}
-	return (1);
+	printf("%lu\n", i);
+	return (0);
 }
