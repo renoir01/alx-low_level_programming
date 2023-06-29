@@ -1,35 +1,28 @@
 #include "main.h"
+#include <ctype.h>
 
 /**
- * cap_string - function that cacpitalizes all
- * word of a string
- * @s: pointer to char
+ *cap_string - Capitalizes every word of string
+ *
+ *@a: String
+ *Return: A string with all words capitalized
  */
-
-char *cap_string(char *s)
+char *cap_string(char *a)
 {
-	int i = 0;
+	int i;
 
-	while (s[i] != '\0')
+	i = 0;
+	while (a[i] != '\0')
 	{
-		if (i == 0 && (s[i] >= 97 && s[i] <= 122))
-		{
-			s[i] = s[i] - ' ';
-		}
-		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'
-			|| s[i] == ',' || s[i] == ';' || s[i] == '!'
-			|| s[i] == '?' || s[i] == '"' || s[i] == '('
-			|| s[i] == ')' || s[i] == '{' || s[i] == '}'
-			|| s[i] == '.')
-		{
-			i++;
-			if (s[i] >= 97 && s[i] <= 122)
-			{
-				s[i] = s[i] - ' ';
-			}
-		}
-		else
-			i++;
+
+		if (i == 0 || a[i - 1] == ' ' || a[i - 1] == '\t' ||
+		    a[i - 1] == '\n' || a[i - 1] == ',' || a[i - 1] == ';' ||
+		    a[i - 1] == '.' || a[i - 1] == '!' || a[i - 1] == '?' ||
+		    a[i - 1] == '"' || a[i - 1] == '(' || a[i - 1] == ')' ||
+		    a[i - 1] == '{' || a[i - 1] == '}')
+			if (isalpha(a[i]) && islower(a[i]))
+				a[i] = toupper(a[i]);
+		i++;
 	}
-	return (s);
+	return (a);
 }

@@ -1,26 +1,23 @@
 #include "main.h"
 
 /**
- * rot13 - Function that encodes a string into rot13
- * @s: Arguments pointer variable to enclode string
- * Return: Returns pointer address of s
+ *rot13 - Rotates the alphabet by 13 places
+ *
+ *@s: Strings
+ *Return: An array of characters
  */
-
 char *rot13(char *s)
 {
 	int i;
-
 	int j;
-
-	char data[] = "kfdfkfdsKdfkdDJFDjdfjfdfjfdkdKfdkOP";
-
-	char datarot[] = "nofdslfdfjhgikKHDFJKFkdfakfdafakKfsfK";
+	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; j < 52; j++)
+		for (j = 0; data1[j] != '\0'; j++)
 		{
-			if (s[j] == data[j])
+			if (s[i] == data1[j])
 			{
 				s[i] = datarot[j];
 				break;

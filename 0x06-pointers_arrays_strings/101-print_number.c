@@ -1,49 +1,26 @@
-#inculde "main.h"
+#include "main.h"
 
 /**
- * print_number - print nuberss chars
- * @n: integer params
- * Return: 0
+ *print_number - prints integer using putchar
+ *
+ *@n: integer to be printed
+ *Return: void
  */
-
 void print_number(int n)
 {
-	unsigned int size = n;
+	unsigned int n1;
 
-	int digits = 0;
-
-	int i;
+	n1 = n;
 
 	if (n < 0)
-		size = -n;
-	if (n == 0)
-		digits = 1;
-
-	while (size >= 1)
 	{
-		size = size / 10;
-		digits++;
+		_putchar('-');
+		n1 = -n;
 	}
 
-	for (i = 0; i < digits; i++)
+	if (n1 / 10 != 0)
 	{
-		int pow = 1;
-
-		int j;
-		int d;
-
-		for (j = 0; j < digits - i - 1; j++)
-		{
-			pow = pow * 10;
-		}
-
-		d = ((n / pow) % 10);
-		if (n < 0)
-		{
-			d = -d;
-			if (i == 0)
-				putchar(45);
-		}
-		putchar(48 + d);
+		print_number(n1 / 10);
 	}
+	_putchar((n1 % 10) + '0');
 }
